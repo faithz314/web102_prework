@@ -20,8 +20,16 @@ body {
 }
 
 .stats-container {
+    color: white;
     display: flex;
+    align-items: center;
+    cursor: pointer;
 }
+
+.stats-container:hover{
+    box-shadow:0 0 30px lightblue;
+}
+
 
 .stats-card {
     background-color: #a8b0bc;
