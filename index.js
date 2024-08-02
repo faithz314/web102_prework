@@ -166,20 +166,32 @@ allBtn.addEventListener('click', showAllGames);
 
 
 
-
-
 // /*************************************************************************************
 //  * Challenge 6: Add more information at the top of the page about the company.
 //  * Skills used: template literals, ternary operator
 // */
 
 // // grab the description container
-// const descriptionContainer = document.getElementById("description-container");
+const descriptionContainer = document.getElementById("description-container");
 
 // // use filter or reduce to count the number of unfunded games
+const totalUnfunded= games.reduce(
+    (acc, game) => 
+        {const num = game.pledged < game.goal ? 1 : 0
 
+            return acc + num;}, 
+    0);
+descriptionContainer.innerHTML= `Total Number of Unfunded Games: ${totalUnfunded}`
 
 // // create a string that explains the number of unfunded games using the ternary operator
+const displayStr= `A total of $${totalMoney.toLocaleString('en-US')} has been raised for ${totalGames} games. 
+Currently, ${totalUnfunded} game remains unfunded. We're on our hands and knees begging you to help us fund more games.`
+
+
+const newParagraph= document.createElement('p');
+newParagraph.innerHTML= `${displayStr}`
+descriptionContainer.appendChild(newParagraph)
+
 
 
 // // create a new DOM element containing the template string and append it to the description container
