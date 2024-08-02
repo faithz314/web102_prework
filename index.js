@@ -188,28 +188,53 @@ const displayStr= `A total of $${totalMoney.toLocaleString('en-US')} has been ra
 Currently, ${totalUnfunded} game remains unfunded. We're on our hands and knees begging you to help us fund more games.`
 
 
+// // create a new DOM element containing the template string and append it to the description container
 const newParagraph= document.createElement('p');
 newParagraph.innerHTML= `${displayStr}`
 descriptionContainer.appendChild(newParagraph)
 
-
-
-// // create a new DOM element containing the template string and append it to the description container
 
 // /************************************************************************************
 //  * Challenge 7: Select & display the top 2 games
 //  * Skills used: spread operator, destructuring, template literals, sort 
 //  */
 
-// const firstGameContainer = document.getElementById("first-game");
-// const secondGameContainer = document.getElementById("second-game");
+const firstGameContainer = document.getElementById("first-game");
+const secondGameContainer = document.getElementById("second-game");
 
-// const sortedGames =  games.sort( (item1, item2) => {
-//     return item2.pledged - item1.pledged;
-// });
+const sortedGames =  games.sort( (item1, item2) => {
+    return item2.pledged - item1.pledged;
+});
 
 // // use destructuring and the spread operator to grab the first and second games
+const [firstGame, secondGame, ...others]= sortedGames;
+
+
 
 // // create a new element to hold the name of the top pledge game, then append it to the correct element
+let topGame = document.createElement('div');
+topGame.innerHTML= `${firstGame.name}`;
+firstGameContainer.appendChild(topGame);
+
 
 // // do the same for the runner up item
+
+let secondTopGame = document.createElement('div');
+secondTopGame.innerHTML= `${secondGame.name}`;
+secondGameContainer.appendChild(secondTopGame);
+
+
+
+
+
+
+
+// ➡️➡️➡️ Step 3: Customizations
+// Amazing work on the site! You've completed all the technical steps to get Sea Monster Crowdfunding's website up and running with all the required features.
+
+// The website is relativley sparse at the moment. Take a momemnt to consider what features you think would help the site stand out more? Take a moment to sketch out some improvements to the site, whether they are to its look and feel or to its functionality. Some examples may include:
+
+// What if a user discovers the site and wants to search for a specific game they have heard of?
+// What if a user wants to use the nav bar at the top of the page to get to the Our Game section quickly?
+// How would you update the CSS of the site to make it more visually appealing?
+// Can you implement any of these features? You've got all the skills you need to make big upgrades to Sea Monster Crowdfunding's landing page. Give it a try! See if you can implement one bonus feature to the site.
