@@ -18,6 +18,7 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 * [ ] List anything else that you can get done to improve the app functionality!
+* [ ] I created a "skip to games section" navigation tab and changed the CSS around to make a dark mode theme!
 
 ## Video Walkthrough
 
